@@ -1,4 +1,5 @@
-SELECT 
+--select in tabel orders with some conditions
+SELECT
 	a.orderNumber,
     a.orderDate,
     b.customerName,
