@@ -1,14 +1,14 @@
 DROP DATABASE IF EXISTS library;
 
-#1. Persiapkan database, buat database dengan nama library
+#1. Prepare a database, create a database with the library name
 CREATE DATABASE IF NOT EXISTS library
 ;
 
-#2. Pindahkan penggunaan pada database library
+#2. use database library
 USE library
 ;
 
-#3. Buat tabel
+#3. make a tabel
 CREATE TABLE IF NOT EXISTS members(
 	id int primary key auto_increment,
     name varchar(50) not null,
@@ -21,8 +21,8 @@ CREATE TABLE IF NOT EXISTS members(
 SHOW TABLES
 ;
 
-#4. Input data yang telah disediakan
--- Taruh query di bawah
+#4. insert data into table members
+-- code insert
 INSERT INTO members(name, city, age, is_active) 
 values
 ("Sana Huynh", "Ranzan","27",1),
@@ -37,12 +37,12 @@ values
 ("Stacy Holcomb", "Tokyo","29",1)
 ;
 
--- menampilkan data member
+-- see member table updates
 select * from members
 ;
 
-#5. Edit data yang diperintahkan
--- Taruh query di bawah (update data "Sadie Cuevas" menjadi: "tidak aktif (0)")
+#5. Edit data
+-- (update data "Sadie Cuevas" becomes: "tidak aktif (0)")
 UPDATE members 
 SET 
     is_active = 0
@@ -50,16 +50,16 @@ WHERE
     ID = 6
 ;
 
--- melihat hasil update
+-- see member table updates
 select * from members
 ;
 
-#6. Hapus semua member yang sudah tidak aktif
--- Taruh query di bawah
+#6. remove inactive members
+-- code query to remove with conditions
 DELETE FROM members
 WHERE is_active = 0
 ;
 
--- melihat hasil update
+-- see member table updates
 select * from members
 ;
